@@ -60,7 +60,7 @@ public class HelloController {
 
     @FXML
     void aceptar(ActionEvent event) {
-
+        ;
     }
 
     private void mostrarAlertInfo(Window win) {
@@ -74,7 +74,42 @@ public class HelloController {
         alert.showAndWait();
     }
 
-    private void verificarInfo(){
+    private void mostrarAlertError(Window win) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.initOwner(win);
+        alert.setHeaderText(null);
+        alert.setTitle("TUS DATOS");
+        alert.setContentText(verificarInfo());
+        alert.showAndWait();
+    }
+
+    private String mostrarInfo(){
+        String info = "";
+        String profesion = txtProfesion.getText();
+        String hermanos = txtHermanos.getText();
+        String edad = comboEdades.getSelectionModel().getSelectedItem();
+        String sexo = "";
+        if (radioHombre.isSelected()){
+            sexo = radioHombre.getText();
+        } else{
+            if (radioMujer.isSelected()) {
+                sexo = radioMujer.getText();
+            }else {
+                sexo = radioOtro.getText();
+            }
+        }
+        ObservableList<String> depSel = FXCollections.observableArrayList(listaDeportes.getSelectionModel().getSelectedItems());
+        Double gustoCompras = sliderCompras.getValue();
+        Double gustoTelevision = sliderTelevision.getValue();
+        Double gustoCine = sliderCine.getValue();
+
+        info = "Profesión: "+profesion+"\n"+
+                "";
+
+        return info;
+    }
+
+    private String verificarInfo(){
         String errores = "";
         if (txtProfesion.getText().isEmpty()){
             errores += "Hay que rellenar el campo profesion.\n";
@@ -88,6 +123,7 @@ public class HelloController {
         if (chkDeporte.isSelected() && listaDeportes.getSelectionModel().getSelectedItems().isEmpty()){
             errores += "Tienes que indicar los deportes que practicas";
         }
+        return errores;
     }
 
     @FXML
