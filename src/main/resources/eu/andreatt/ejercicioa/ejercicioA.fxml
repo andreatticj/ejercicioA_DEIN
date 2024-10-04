@@ -9,6 +9,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -16,13 +17,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.andreatt.ejercicioa.HelloController">
+
+<GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.andreatt.ejercicioa.HelloController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints />
+      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -44,7 +47,7 @@
          </font>
       </Label>
       <Label text="Profesion:" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-      <TextField fx:id="txtProfesion" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1">
+      <TextField fx:id="txtProfesion" prefHeight="24.0" prefWidth="359.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets right="10.0" />
          </GridPane.margin>
@@ -56,9 +59,9 @@
          </GridPane.margin>
       </TextField>
       <Label text="Edad:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-      <ComboBox fx:id="comboEdades" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+      <ComboBox fx:id="comboEdades" prefWidth="150.0" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
          <GridPane.margin>
-            <Insets right="30.0" />
+            <Insets />
          </GridPane.margin>
       </ComboBox>
       <Label text="Sexo:" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
@@ -66,9 +69,13 @@
             <Insets right="10.0" />
          </GridPane.margin>
       </Label>
-      <RadioButton mnemonicParsing="false" text="Hombre" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <RadioButton mnemonicParsing="false" text="Mujer" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <RadioButton mnemonicParsing="false" text="Otro" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <RadioButton mnemonicParsing="false" text="Hombre" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <toggleGroup>
+            <ToggleGroup fx:id="grpSexo" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton mnemonicParsing="false" text="Mujer" toggleGroup="$grpSexo" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <RadioButton mnemonicParsing="false" text="Otro" toggleGroup="$grpSexo" GridPane.columnIndex="3" GridPane.rowIndex="3" />
       <CheckBox fx:id="chkDeporte" mnemonicParsing="false" text="¿Practica algun deporte?" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
       <Label text="Marque del 1 al 10 su grado de aficion" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="6">
          <font>
@@ -76,7 +83,7 @@
          </font>
       </Label>
       <Label text="Compras:" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
-      <Slider fx:id="sliderCompras" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="5" prefWidth="220.0" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="7">
+      <Slider fx:id="sliderCompras" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="5" prefWidth="220.0" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="7">
          <GridPane.margin>
             <Insets right="10.0" />
          </GridPane.margin>
@@ -85,7 +92,7 @@
          </tooltip>
       </Slider>
       <Label text="Ver television:" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
-      <Slider fx:id="sliderTelevision" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="8">
+      <Slider fx:id="sliderTelevision" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="8">
          <GridPane.margin>
             <Insets right="10.0" />
          </GridPane.margin>
@@ -94,7 +101,7 @@
          </tooltip>
       </Slider>
       <Label text="Ir al cine:" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
-      <Slider fx:id="sliderCine" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="9">
+      <Slider fx:id="sliderCine" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="9">
          <GridPane.margin>
             <Insets right="10.0" />
          </GridPane.margin>
@@ -102,9 +109,17 @@
             <Tooltip text="Indica de 1 a 10 cuanto te gusta ir al cine" />
          </tooltip>
       </Slider>
-      <Button fx:id="btnAceptar" minWidth="150.0" mnemonicParsing="false" text="Aceptar" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
-      <Button fx:id="btnCancelar" minWidth="150.0" mnemonicParsing="false" text="Cancelar" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
-      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4" GridPane.rowSpan="2">
+      <Button fx:id="btnAceptar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Aceptar" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+      </Button>
+      <Button fx:id="btnCancelar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Cancelar" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+      </Button>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" GridPane.rowSpan="2">
          <children>
             <Label text="¿Cuales?" />
             <ListView fx:id="listaDeportes" prefHeight="200.0" prefWidth="200.0">
