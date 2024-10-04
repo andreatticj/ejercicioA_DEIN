@@ -109,12 +109,12 @@
             <Tooltip text="Indica de 1 a 10 cuanto te gusta ir al cine" />
          </tooltip>
       </Slider>
-      <Button fx:id="btnAceptar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Aceptar" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+      <Button fx:id="btnAceptar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#aceptar" text="Aceptar" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="10">
          <GridPane.margin>
             <Insets left="10.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="btnCancelar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Cancelar" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+      <Button fx:id="btnCancelar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="10">
          <GridPane.margin>
             <Insets right="10.0" />
          </GridPane.margin>
