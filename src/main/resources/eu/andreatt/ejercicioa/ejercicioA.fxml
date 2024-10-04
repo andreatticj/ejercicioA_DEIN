@@ -122,7 +122,7 @@
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" GridPane.rowSpan="2">
          <children>
             <Label text="¿Cuales?" />
-            <ListView fx:id="listaDeportes" prefHeight="200.0" prefWidth="200.0">
+            <ListView fx:id="listaDeportes" disable="true" prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets right="10.0" />
                </VBox.margin>
