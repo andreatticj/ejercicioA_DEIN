@@ -60,7 +60,15 @@ public class HelloController {
 
     @FXML
     void aceptar(ActionEvent event) {
-        ;
+
+        String error = verificarInfo();
+        Window win = ((Button) event.getSource()).getScene().getWindow();
+
+        if (error.isEmpty()){
+            mostrarAlertInfo(win);
+        } else {
+            mostrarAlertError(win);
+        }
     }
 
     private void mostrarAlertInfo(Window win) {
@@ -68,9 +76,7 @@ public class HelloController {
         alert.initOwner(win);
         alert.setHeaderText(null);
         alert.setTitle("TUS DATOS");
-        String profesion = "Profesión: "+txtProfesion.getText();
-
-        alert.setContentText("Información sobre la aplicación");
+        alert.setContentText(mostrarInfo());
         alert.showAndWait();
     }
 
@@ -104,8 +110,13 @@ public class HelloController {
         Double gustoCine = sliderCine.getValue();
 
         info = "Profesión: "+profesion+"\n"+
-                "";
-
+                "Nº hermanos: "+hermanos+"\n"+
+                "Edad: "+edad+"\n"+
+                "Sexo: "+sexo+"\n"+
+                "Deportes que practicas: \n\t"+depSel+"\n"+
+                "Grado de aficion a las compas: "+gustoCompras+"\n"+
+                "Grado de aficion a ver la television: "+gustoTelevision+"\n"+
+                "Grado de aficion a ir al cine: "+gustoCine+"\n";
         return info;
     }
 
