@@ -115,8 +115,15 @@ public class HelloController {
                 "Nº hermanos: "+hermanos+"\n"+
                 "Edad: "+edad+"\n"+
                 "Sexo: "+sexo+"\n"+
-                "Deportes que practicas: \n\t"+depSel+"\n"+
-                "Grado de aficion a las compas: "+gustoCompras+"\n"+
+                "Deportes que practicas: \n";
+                    if (depSel.size()==0){
+                        info += "\tNo practicas ningun deporte\n";
+                    }else{
+                        for (int j = 0; j < depSel.size(); j++) {
+                            info += "\t"+depSel.get(j) + "\n";
+                        }
+                    }
+                info +="Grado de aficion a las compas: "+gustoCompras+"\n"+
                 "Grado de aficion a ver la television: "+gustoTelevision+"\n"+
                 "Grado de aficion a ir al cine: "+gustoCine+"\n";
         return info;
@@ -129,6 +136,13 @@ public class HelloController {
         }
         if (txtHermanos.getText().isEmpty()){
             errores += "Hay que rellenar el campo Nº hermanos.\n";
+        }else {
+            // Verificar si el campo Nº hermanos es un número entero
+            try {
+                Integer.parseInt(txtHermanos.getText());
+            } catch (NumberFormatException e) {
+                errores += "El campo Nº hermanos debe ser un número válido.\n";
+            }
         }
         if (!radioHombre.isSelected() && !radioMujer.isSelected() && !radioOtro.isSelected()){
             errores += "Hay que seleccionar un sexo.\n";
