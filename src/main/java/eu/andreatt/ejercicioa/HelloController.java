@@ -105,6 +105,7 @@ public class HelloController {
                 sexo = radioOtro.getText();
             }
         }
+
         ObservableList<String> depSel = FXCollections.observableArrayList(listaDeportes.getSelectionModel().getSelectedItems());
         Double gustoCompras = sliderCompras.getValue();
         Double gustoTelevision = sliderTelevision.getValue();
@@ -144,6 +145,13 @@ public class HelloController {
 
     }
 
+    @FXML
+    void ckhDeporteListener(ActionEvent event) {
+        if (chkDeporte.isSelected()){
+            listaDeportes.setDisable(false);
+        }
+    }
+
 
     @FXML
     void initialize() {
@@ -153,10 +161,9 @@ public class HelloController {
 
         ObservableList<String> elementosLista = FXCollections.observableArrayList("Tenis", "Fútbol","Baloncesto","Natación","Ciclismo","Otro");
         listaDeportes.setItems(elementosLista);
+        listaDeportes.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
-        if (chkDeporte.isSelected()){
-            listaDeportes.setDisable(true);
-        }
+
     }
 
 }
