@@ -13,6 +13,8 @@ Esta es una aplicación JavaFXML llamada "Encuesta" que permite a los usuarios c
 
 ## Estructura del Proyecto
 
-  HelloApplication.java: Clase principal que inicia la aplicación JavaFX.
-  HelloController.java: Controlador que maneja la lógica de la interfaz de usuario y la interacción con los elementos del formulario.
-  ejercicioA.fxml: Archivo FXML que define la interfaz gráfica de la aplicación.
+  `HelloApplication.java`: Clase principal que inicia la aplicación JavaFX.
+  
+  `HelloController.java` Controlador que maneja la lógica de la interfaz de usuario y la interacción con los elementos del formulario.
+  
+  `ejercicioA.fxml`: Archivo FXML que define la interfaz gráfica de la aplicación.
